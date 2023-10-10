@@ -1,0 +1,42 @@
+html,
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.overlay .p-dialog-header {
+  padding: .5rem 1rem !important;
+  background: #1c69d4 !important;
+  color: #fff !important;
+}
+
+.overlay .p-dialog-header .p-dialog-header-icons button {
+  color: #fff !important;
+}
+
+.p-dialog-content {
+  padding: 0 !important;
+}
+
+.p-dialog .p-dialog-header .p-dialog-header-icon:enabled:hover {
+  background: #135fc8 !important;
+}
+
+.p-dialog .p-dialog-header .p-dialog-header-icon:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.p-dialog.archiveModal .p-dialog-header .p-dialog-header-icon:enabled:hover {
+  background: #676767 !important;
+}
+
+.p-dialog.archiveModal .p-dialog-header .pi-times::before {
+  color: #fff;
+}

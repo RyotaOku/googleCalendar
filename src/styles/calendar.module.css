@@ -1,0 +1,1283 @@
+.header {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    padding: 8px 10px;
+    align-items: center;
+    border-bottom: 1px solid #dadce0;
+    position: relative;
+    min-width: 1100px;
+}
+
+.header .xp {
+    position: absolute;
+    right: 20px;
+    width: 200px;
+    height: 40px;
+    cursor: pointer;
+    background: url("https://upload.wikimedia.org/wikipedia/it/thumb/2/25/Microsoft_Windows_XP_logo_and_wordmark.svg/1280px-Microsoft_Windows_XP_logo_and_wordmark.svg.png") no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    border: none;
+}
+
+.menu {
+    padding: 12px;
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    border-radius: 50%;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/2048px-Hamburger_icon.svg.png') no-repeat;
+    background-position: center center;
+    background-size: 60% 60%;
+    border: none;
+    appearance: none;
+    vertical-align: middle;
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+.menu:hover {
+    background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/2048px-Hamburger_icon.svg.png') no-repeat, #dadce0;
+    background-position: center center;
+    background-size: 60% 60%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: lighter;
+    line-height: 1;
+    position: relative;
+    left: 56px;
+}
+
+.logo::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -50px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Coat_of_arms_of_the_Soviet_Union_%281956%E2%80%931991%29.svg/1920px-Coat_of_arms_of_the_Soviet_Union_%281956%E2%80%931991%29.svg.png');
+    background-position: center center;
+    background-size: 100% 100%;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+}
+
+.todayButton {
+    height: 36px;
+    width: 64px;
+    border-radius: 3px;
+    border: 1px solid #dadce0;
+    background: none;
+    position: relative;
+    left: 80px;
+    cursor: pointer;
+}
+
+.todayButton:hover {
+    background: #f0f0f0;
+}
+
+.todayButton:hover .todayTooltip {
+    display: inline-block;
+    animation: tooltipVisible 1s forwards ease-out;
+}
+
+@keyframes tooltipVisible {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.todayTooltip {
+    background: #3c4043;
+    color: #e8eaed;
+    font-size: 12px;
+    padding: 4px 4px;
+    line-height: 1;
+    border-radius: 4px;
+    position: absolute;
+    top: 40px;
+    left: -25px;
+    display: inline-block;
+    width: 110px;
+    opacity: 0;
+    display: none;
+    z-index: 10;
+}
+
+.headerPrev {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: lighter;
+    position: relative;
+    left: 110px;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.headerPrev::after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    display: block;
+    border-top: 2px solid #454545;
+    border-left: 2px solid #454545;
+    transform: translateX(12px) rotate(-45deg);
+}
+
+.headerNext {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: lighter;
+    position: relative;
+    left: 110px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.headerNext::after {
+    content: '';
+    width: 7px;
+    height: 7px;
+    display: block;
+    border-top: 2px solid #454545;
+    border-left: 2px solid #454545;
+    transform: translateX(8px) rotate(135deg);
+}
+
+.headerPrev:hover,
+.headerNext:hover {
+    background: #f0f0f0;
+}
+
+.calendarData {
+    position: absolute;
+    left: 450px;
+    width: 200px;
+    font-weight: lighter;
+}
+
+.mainForm {
+    width: 100%;
+    height: calc(100vh - 64px);
+    max-height: calc(100vh - 64px);
+    display: flex;
+    min-width: 1100px;
+    min-height: 800px;
+    /* overflow: hidden; */
+}
+
+.leftForm {
+    width: 264px;
+    height: 100%;
+    border-right: 1px solid #dadce0;
+    position: relative;
+}
+
+.createButton {
+    background: none;
+    height: 48px;
+    width: 130px;
+    border-radius: 48px;
+    border: none;
+    margin: 15px 0 0 8px;
+    background: rgba(255, 255, 255, 0.502);
+    box-shadow: 0px 1px 2px 0px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+    position: relative;
+    cursor: pointer;
+    transition: .4s ease-out;
+}
+
+.createButton:hover {
+    background: #f6fafe;
+    box-shadow: 0px 4px 4px 0px rgba(60, 64, 67, 0.3), 0px 8px 12px 6px rgba(60, 64, 67, 0.15);
+}
+
+.createButton::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: rgb(128, 134, 139) transparent transparent transparent;
+    right: 14px;
+    top: calc(48px/2 - 2px);
+}
+
+.createButton svg {
+    position: absolute;
+    top: 6px;
+    left: 12px;
+}
+
+.createButton span {
+    position: relative;
+    left: 10px;
+}
+
+.leftPrev {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: lighter;
+    position: absolute;
+    top: 86px;
+    left: 190px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.leftPrev::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    display: block;
+    border-top: 1.5px solid #454545;
+    border-left: 1.5px solid #454545;
+    transform: translateX(2px) rotate(-45deg);
+}
+
+.leftNext {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: lighter;
+    position: absolute;
+    top: 86px;
+    left: 223px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.leftNext::after {
+    content: '';
+    width: 4px;
+    height: 4px;
+    display: block;
+    border-top: 1.5px solid #454545;
+    border-left: 1.5px solid #454545;
+    transform: rotate(135deg);
+}
+
+.leftPrev:hover,
+.leftNext:hover {
+    /* background: #f0f0f0; */
+}
+
+.leftCalendar {
+    padding: 0 14px 16px 19px;
+    width: 100%;
+}
+
+.calendarCaption {
+    margin-top: 22px;
+    font-size: 14px;
+    text-align: left;
+    padding: 0 30px;
+}
+
+.leftCalendar thead {
+    width: 100%;
+}
+
+.leftCalendar tbody tr {
+    max-height: 10px;
+}
+
+.leftCalendar thead tr th {
+    font-size: 11px;
+    font-weight: lighter;
+    line-height: 3;
+    color: #70757a;
+    height: 10px;
+}
+
+.leftCalendar tbody tr p {
+    height: 10px;
+    margin: 10px 0;
+}
+
+.leftCalendar div {
+    display: none;
+}
+
+.leftCalendar tbody td span {
+    display: block;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 0 auto;
+    line-height: 2.3;
+    font-size: 10px;
+}
+
+.leftCalendar tbody td span:hover {
+    background: #f0f0f0;
+    cursor: pointer;
+}
+
+.leftForm .darkMode {
+    position: absolute;
+    bottom: 50px;
+    left: calc(50% - 100px/2);
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Coat_of_arms_of_the_Soviet_Union_%281956%E2%80%931991%29.svg/1920px-Coat_of_arms_of_the_Soviet_Union_%281956%E2%80%931991%29.svg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+    width: 100px;
+    height: 100px;
+    border: none;
+    appearance: none;
+    transition: .5s;
+}
+
+.centerForm {
+    flex-grow: 1;
+    height: 100%;
+}
+
+.mainCalendar {
+    width: 100%;
+    height: 100%;
+    height: calc(100vh - 64px);
+    position: relative;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+
+.mainCalendar thead {
+    position: relative;
+    width: 100%;
+}
+
+.mainCalendar thead tr {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.mainCalendar thead tr th {
+    flex-grow: 1;
+    height: 20px;
+    font-size: 11px;
+    font-weight: lighter;
+    line-height: 2.5;
+    color: #70757a;
+    position: relative;
+    padding: 0;
+    border-left: 1px solid #dadce0;
+}
+
+.mainCalendar thead tr th:first-child {
+    border: none;
+}
+
+.mainCalendar tbody {
+    height: calc(100vh - 64px - 20px);
+    max-height: calc(100vh - 64px - 20px);
+    display: flex;
+    flex-direction: column;
+}
+
+.mainCalendar tbody tr {
+    overflow: hidden;
+    height: 100px;
+    flex-grow: 1;
+    display: flex;
+    position: relative;
+    border-bottom: 1px solid #dadce0;
+    min-height: 160px;
+}
+
+.mainCalendar tbody tr:first-child {
+    border: none;
+    display: none;
+}
+
+.mainCalendar tbody td {
+    vertical-align: top;
+    font-size: 12px;
+    flex-grow: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-width: 0;
+    width: 0;
+    position: relative;
+    padding: 0;
+    border-left: 1px solid #dadce0;
+}
+
+.mainCalendar tbody td::-webkit-scrollbar {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    width: 5px;
+}
+
+.mainCalendar tbody td::-webkit-scrollbar-thumb {
+    background: #ffd6d6;
+    border-radius: 5px;
+}
+
+.mainCalendar tbody td div {
+    height: 24px;
+    line-height: 1.8;
+    padding: 0 4px;
+    max-height: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    background: #be0000;
+    border-radius: 4px;
+    margin: 5px 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.mainCalendar tbody td div:hover {
+    background: #a80000;
+}
+
+.mainCalendar tbody tr:nth-child(2) td {
+    border-top: none;
+}
+
+.mainCalendar tbody td:first-child {
+    border-left: none;
+}
+
+.mainCalendar tbody td:last-child {
+    border-right: none;
+}
+
+.mainCalendar tbody td p {
+    width: calc(100% + 5px);
+    height: 30px;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    margin: 0;
+    z-index: 10;
+    padding-top: 5px;
+}
+
+.mainCalendar tbody td p span {
+    display: block;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    padding: 6px 0 0 0;
+    text-align: center;
+    background: #fff;
+    margin: 0 auto;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.mainCalendar tbody td span:hover {
+    background: #f0f0f0;
+}
+
+.mainCalendar tbody tr .today span,
+.leftCalendar tbody tr .today span {
+    color: #fff;
+    background: #be0000;
+    cursor: pointer;
+    z-index: -9;
+}
+
+.mainCalendar tbody tr .today span:hover,
+.leftCalendar tbody tr .today span:hover {
+    background: #a80000;
+
+}
+
+.rightForm {
+    width: 55px;
+    height: 100%;
+    border-left: 1px solid #dadce0;
+}
+
+.rightForm img {
+    display: block;
+    width: 50%;
+    aspect-ratio: 1/1;
+    margin: 35px auto;
+    cursor: pointer;
+}
+
+.rightForm img:first-child {
+    margin-top: 20px;
+}
+
+.overlay {
+    width: 100%;
+    height: 100vh;
+    background: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.modalWrap {
+    width: 450px;
+    height: 600px;
+    background: rgb(255, 255, 255);
+    box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    padding: 50px 0 0 60px;
+    position: relative;
+    overflow: hidden;
+    animation: show .1s ease-in;
+    z-index: 1000;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.modalWrap::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #f1f3f4;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px 10px 0 0;
+    cursor: move;
+}
+
+.modalWrap::after {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 2px;
+    border-top: 1.5px solid #818181;
+    border-bottom: 1.5px solid #818181;
+    position: absolute;
+    top: calc(40px - 20px - 2px);
+    left: 20px;
+    cursor: pointer;
+}
+
+.modalOff {
+    width: 28px;
+    height: 28px;
+    appearance: none;
+    background: none;
+    border: none;
+    position: absolute;
+    top: calc(20px - 25px/2);
+    right: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.modalOff:hover {
+    background: #dadada;
+}
+
+.modalOff::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: -0.5px;
+    left: 12px;
+    border-bottom: 2px solid #909090;
+    transform: rotate(45deg);
+}
+
+.modalOff::after {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: -0.5px;
+    right: 11px;
+    border-bottom: 2px solid #909090;
+    transform: rotate(-45deg);
+}
+
+.modalOff:focus-visible {
+    outline: 2px solid rgb(32, 69, 255);
+}
+
+.modalWrap .scheduleFormWrap {
+    width: 95%;
+    margin: 20px 0;
+    position: relative;
+}
+
+.modalWrap .scheduleForm {
+    border: none;
+    border-bottom: 1px solid #dadada;
+    display: block;
+    width: 100%;
+    line-height: 1;
+    font-size: 22px;
+    padding: 2px 4px;
+    transition: .1s;
+}
+
+.modalWrap .scheduleForm:focus {
+    outline: none;
+}
+
+.modalWrap .scheduleForm+.scheduleUnderLine {
+    width: 0px;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transition: .2s;
+    border: 1.5px solid transparent;
+}
+
+.modalWrap .scheduleForm:focus+.scheduleUnderLine {
+    width: 100%;
+    left: calc(50% - 100%/2);
+    border-bottom: 1.5px solid #be0000;
+}
+
+.modalWrap .dayWrap {
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.modalWrap .dayWrap::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -40px;
+    top: 14px;
+    background: url('https://cdn-icons-png.flaticon.com/512/109/109613.png') no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+}
+
+.modalWrap .dayWrap .day {
+    /* width: 10px; */
+    margin-left: 80px;
+    border: none;
+    appearance: none;
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    cursor: pointer;
+    overflow: visible;
+}
+
+.modalWrap .dayWrap .day::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    background: transparent;
+    z-index: 1;
+}
+
+.modalWrap .dayWrap .day:first-child {
+    margin: 0;
+}
+
+.modalWrap .dayWrap .day:first-child::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: rgb(128, 134, 139) transparent transparent transparent;
+    right: 0px;
+    top: 8px;
+}
+
+.modalWrap .dayWrap .day:last-child::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    border-bottom: 1px solid #000;
+    position: absolute;
+    left: -45px;
+}
+
+.modalWrap .dayWrap .day:last-child::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: rgb(128, 134, 139) transparent transparent transparent;
+    right: 0px;
+    top: 8px;
+}
+
+.modalWrap .dayWrap .day:hover {
+    border-bottom: 1.5px solid #818181;
+}
+
+.modalWrap .memoWrap {
+    width: 95%;
+    position: relative;
+    margin-top: 30px;
+}
+
+.modalWrap .memoWrap::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -40px;
+    top: 0;
+    background: url('https://creazilla-store.fra1.digitaloceanspaces.com/icons/3412336/add-text-line-icon-md.png') no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+}
+
+.modalWrap .memoForm {
+    border: none;
+    border-bottom: 1px solid #dadada;
+    display: block;
+    width: 100%;
+    line-height: 1;
+    font-size: 22px;
+    padding: 2px 4px;
+    transition: .1s;
+    border-bottom: 1px solid #000;
+    font-size: 16px;
+}
+
+.modalWrap .memoForm:focus {
+    outline: none;
+}
+
+.modalWrap .memoForm::placeholder {
+    font-size: 16px;
+}
+
+.colorWrap {
+    margin-top: 30px;
+    position: relative;
+}
+
+.colorWrap::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -40px;
+    top: 15px;
+    background: url('https://cdn-icons-png.flaticon.com/512/4260/4260113.png') no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+}
+
+.colorWrap div {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.colorWrap div .colorPreview {
+    /* border: 1px solid #000; */
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.colorWrap div span:not(.selectColor span) {
+    color: #575757;
+    line-height: 1;
+    margin-left: 5px;
+    position: absolute;
+    top: 12px;
+    left: 40px;
+    padding: 0;
+    display: inline-block;
+}
+
+.colorWrap .selectColor {
+    border: 1px solid #eee;
+    height: 100%;
+    width: 95%;
+    border-radius: 6px;
+}
+
+.colorWrap label {
+    display: inline-block;
+    width: 50%;
+    line-height: 1;
+    margin: 6px 0;
+    position: relative;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+.colorWrap label span {
+    position: absolute;
+    top: 11px;
+    cursor: pointer;
+}
+
+.colorWrap label input {
+    appearance: none;
+    height: 30px;
+    width: 30px;
+    background: #000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.colorWrap #communismRed {
+    background: #be0000;
+}
+
+.colorWrap #flamingo {
+    background: #e67c73;
+}
+
+.colorWrap #banana {
+    background: #ffd700;
+}
+
+.colorWrap #green {
+    background: #0b8043;
+}
+
+.colorWrap #skyblue {
+    background: #9CB2F1;
+}
+
+.colorWrap #blue {
+    background: #0000A9;
+}
+
+.colorWrap #grape {
+    background: #8121ee;
+}
+
+.colorWrap #gray {
+    background: #5e5e5e;
+}
+
+.saveButton {
+    width: 75px;
+    height: 36px;
+    border: none;
+    background: #be0000;
+    border-radius: 4px;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.saveButton:hover {
+    background: #a80000;
+}
+
+.delButton {
+    width: 75px;
+    height: 36px;
+    border: none;
+    background: #8d8d8d;
+    border-radius: 4px;
+    position: absolute;
+    right: 110px;
+    bottom: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.delButton:hover {
+    background: #6f6f6f;
+}
+
+.overlayBlack {
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    animation: searchShow .1s forwards;
+    opacity: 0;
+}
+
+@keyframes searchShow {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.searchWrap {
+    width: 80%;
+    height: 80%;
+    background: url("https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA13R95Z.img?h=630&w=1200&m=6&q=60&o=t&l=f&f=jpg") no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    position: fixed;
+    top: 10%;
+    left: calc(50% - 80%/2);
+    border-radius: 12px;
+    z-index: 110;
+    animation: searchShow .1s forwards;
+}
+
+.searchWrap::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: inherit;
+    filter: blur(4px);
+    border-radius: 12px;
+}
+
+.searchWrap img {
+    opacity: .1;
+    width: 100px;
+    position: absolute;
+    top: calc(50% - 100px/2);
+    animation: communism 10s infinite ease-in-out;
+}
+
+@keyframes communism {
+    0% {
+        top: calc(50% - 100px/2);
+        left: 0;
+        opacity: .6;
+    }
+
+    25% {
+        top: 0;
+        left: calc(50% - 100px/2);
+        opacity: 0.1;
+    }
+
+    50% {
+        top: calc(50% - 100px/2);
+        left: calc(100% - 100px);
+        opacity: 0.4;
+    }
+
+    75% {
+        top: calc(100% - 100px);
+        left: calc(50% - 100px/2);
+    }
+
+    100% {
+        top: calc(50% - 100px/2);
+        left: 0;
+        opacity: 0.6;
+    }
+}
+
+.searchInner {
+    width: 60%;
+    height: 80%;
+    background: #ffffffcb;
+    border-radius: 12px;
+    position: absolute;
+    top: 10%;
+    left: calc(50% - 60%/2);
+    backdrop-filter: blur(2px);
+    overflow: hidden;
+}
+
+.searchInput {
+    background: none;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #353535;
+    width: 80%;
+    height: 40px;
+    margin: 40px auto 0;
+    font-size: 20px;
+}
+
+.searchButton {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50px;
+    right: 11%;
+    cursor: pointer;
+    appearance: none;
+    background: url("https://uxwing.com/wp-content/themes/uxwing/download/user-interface/search-icon.png") no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    border: none;
+}
+
+.searchInput:focus {
+    outline: none;
+}
+
+.resultScroll {
+    height: 86%;
+    overflow-y: scroll;
+}
+
+.resultScroll::-webkit-scrollbar {
+    display: none;
+}
+
+.resultWrap {
+    display: flex;
+    background: #fff;
+    border-radius: 6px;
+    padding: 10px;
+    height: 80px;
+    margin: 20px 10%;
+    position: relative;
+    overflow-x: scroll;
+}
+
+.resultColorPreview {
+    margin-top: 8px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.resultWrap::-webkit-scrollbar {
+    display: none;
+}
+
+.resultWrap .resultDay {
+    position: absolute;
+    bottom: 5px;
+}
+
+.resultWrap .resultSchedule {
+    font-size: 22px;
+    position: absolute;
+    height: 30px;
+    font-weight: bolder;
+    left: 36px;
+}
+
+.resultWrap .resultSchedule span {
+    font-size: 18px;
+    display: inline-block;
+    margin-left: 10px;
+    font-weight: normal;
+}
+
+@media (prefers-color-scheme: dark) {
+
+    .header:not(:hover),
+    .mainForm:not(:hover) {
+        transition: color .5s, background .5s;
+    }
+
+    .header {
+        background-color: #202125;
+        color: #efefef;
+        border-bottom: 1px solid #4f4f4f;
+    }
+
+    .header .xp {
+        background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Windows_11_logo.svg/2560px-Windows_11_logo.svg.png") no-repeat;
+        background-size: 100% 100%;
+        background-position: center center;
+    }
+
+    .header .todayButton {
+        color: #efefef;
+        border: 1px solid #4f4f4f;
+    }
+
+    .header .todayButton:hover,
+    .header .headerNext:hover,
+    .header .headerPrev:hover,
+    .leftForm .createButton:hover,
+    .leftCalendar tbody td p span:hover,
+    .mainCalendar tbody td p span:hover {
+        background: #353535;
+    }
+
+    .header .headerNext::after,
+    .header .headerPrev::after {
+        border-color: #efefef;
+    }
+
+    .header .menu {
+        filter: brightness(0) invert(1);
+    }
+
+    .header .menu:hover {
+        background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/2048px-Hamburger_icon.svg.png') no-repeat, #353535;
+        background-position: center center;
+        background-size: 60% 60%;
+        filter: none;
+    }
+
+    .mainForm {
+        background-color: #202125;
+        color: #efefef;
+    }
+
+    .mainForm * {
+        border-color: #4f4f4f !important;
+    }
+
+    .leftForm .createButton {
+        background: none;
+        border: 1px solid #000;
+        color: #efefef;
+    }
+
+    .leftForm .darkMode {
+        filter: drop-shadow(1px 1px 30px rgb(255, 234, 0));
+    }
+
+    .mainCalendar tbody td p {
+        background: #202125;
+    }
+
+    .mainCalendar tbody td p span {
+        background: #202125;
+    }
+
+    .mainCalendar tbody td::-webkit-scrollbar {
+        padding: 0;
+        margin: 0;
+        background: #202125;
+        width: 5px;
+    }
+
+    .modalWrap {
+        background: #252525;
+        color: #efefef;
+    }
+
+    .modalWrap::before {
+        background: #5b5b5b;
+    }
+
+    .modalWrap *::before:not(.modalOff),
+    .modalWrap *::after {
+        filter: brightness(0) invert(1);
+    }
+
+    .modalWrap .dayWrap::before {
+        filter: brightness(0) invert(1);
+    }
+
+    .modalWrap .dayWrap .day:last-child::before {
+        filter: brightness(0) invert(1);
+    }
+
+    .modalWrap .memoWrap::before {
+        filter: brightness(0) invert(1);
+    }
+
+    .modalWrap .colorWrap::before {
+        filter: brightness(0) invert(1);
+    }
+
+    .modalWrap input {
+        background: none;
+        color: #efefef;
+    }
+
+    .colorWrap div span:not(.selectColor span) {
+        color: #efefef;
+    }
+
+    .modalWrap .memoForm {
+        border-color: #4f4f4f;
+    }
+
+    .searchWrap::before {
+        background: inherit;
+        filter: brightness(.5);
+    }
+
+    .searchInner {
+        background: #000000b4;
+    }
+
+    .searchInput {
+        border-bottom: 1px solid #d9d9d9;
+        color: #efefef;
+    }
+
+    .searchButton {
+        filter: brightness(0) invert(1);
+    }
+
+    .resultWrap {
+        background: #353535;
+        color: #efefef;
+    }
+}
