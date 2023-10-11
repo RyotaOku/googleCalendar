@@ -1,4 +1,4 @@
-## GoogleCalendar
+## Google Calendar
 
 ### Overview
 Using React, TypeScript, and PostgreSQL, I attempted to create a clone of Google Calendar. While I focused primarily on mimicking its appearance, I also took on the challenge of integrating with a database for added functionality.  
