@@ -1,8 +1,0 @@
-*
-!/upload
-!/download
-!/deploy
-!/private
-!/credentials
-!/mail
-!.gitignore
