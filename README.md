@@ -3,6 +3,7 @@
 ### Overview
 Using React, TypeScript, and PostgreSQL, I attempted to create a clone of Google Calendar. While I focused primarily on mimicking its appearance, I also took on the challenge of integrating with a database for added functionality.  
 *(概要: React TypeScript Postgressを用いて、Google Calendarを目コピしてみた。見た目の再現に力を入れて、余力でDBとの接続などにも挑戦。)*
+You can check the real thing from the varcel link, but you cannot experience adding or deleting appointments because the DB does not currently exist.
 
 ### Screenshot or GIF
 ![FireShot Capture 034 -  - localhost](https://github.com/RyotaOku/googleCalendar/assets/114388961/2ea802a3-68a7-448c-ace2-2d889a41fab6)
